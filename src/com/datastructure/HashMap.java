@@ -229,4 +229,17 @@ public class HashMap<K, V> implements Map<Object, Object>{
 		int index = (bucketSize - 1) & hash;
 		return index;
 	}
+	
+	@Override
+	public void clear() {
+		
+		bucket = new ArrayList<>();
+		bucketSize = 16;
+		size = 0;
+		
+		// initializing chaining 
+		for (int i = 0; i < bucketSize; i++) {
+			bucket.add(null);
+		}	
+	}
 }
