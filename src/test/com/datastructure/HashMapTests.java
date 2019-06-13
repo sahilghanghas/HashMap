@@ -61,4 +61,28 @@ public class HashMapTests {
         map.clear();
         assertEquals(0,map.getSize());
 	}
+	
+	@Test
+	public void rehashingTest() {
+		HashMap<String, Integer>map = new HashMap<>(); 
+        map.add("testing",1 ); 
+        map.add("hash",2 );
+        map.add("test1",3 ); 
+        map.add("test2",4 );
+        map.add("test3",5 ); 
+        map.add("test4",6 );
+        map.add("test5",7 );
+        map.add("test6",8 ); 
+        map.add("test7",9 );
+        map.add("test8",10 ); 
+        map.add("test9",11 );
+        map.add("test10",12 );
+        map.add("test11",13 ); 
+        map.add("test12",14 );
+        map.add("test13",15 ); 
+        map.add("test14",16 );
+        map.add("test15",17 );
+        map.remove("testing");
+        assertEquals(16,map.getSize());
+	}
 }
