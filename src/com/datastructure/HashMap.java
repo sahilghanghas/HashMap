@@ -107,6 +107,9 @@ public class HashMap<K, V> implements Map<Object, Object>{
 		
 		HashNode<K, V> newHashNode = new HashNode<K, V>((K)k, (V)v);
 		newHashNode.next = head;
+		if(head != null) {
+				head.prev = newHashNode;
+			}
 		bucket.set(bucketIndex, newHashNode);
 		
 		// increase bucket size if load factor is achieved
