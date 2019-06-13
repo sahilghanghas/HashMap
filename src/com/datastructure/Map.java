@@ -52,5 +52,9 @@ public interface Map<K, V> {
 	 */
 	double getLoadFactor();
 	
+	/**
+	 * Removes all the mappings from the HashMap
+	 */
+	void clear();
 	
 }
