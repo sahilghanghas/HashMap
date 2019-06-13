@@ -60,7 +60,7 @@ public class HashMap<K, V> implements Map<Object, Object>{
 	}
 
 	@Override
-	public boolean contains(Object k) {
+	public boolean containsKey(Object k) {
 		
 		// get index corresponding to the given Key
 		int bucketIndex = getBucketIndex(k);
