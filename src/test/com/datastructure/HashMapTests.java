@@ -52,4 +52,13 @@ public class HashMapTests {
         assertEquals(true,map.isEmpty());
 	}
 	
+	@Test
+	public void clearTest() {
+	HashMap<String, Integer>map = new HashMap<>(); 
+        map.add("testing",1 ); 
+        map.add("hash",2 ); 
+        map.add("map",5 );
+        map.clear();
+        assertEquals(0,map.getSize());
+	}
 }
