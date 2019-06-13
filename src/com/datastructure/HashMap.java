@@ -2,32 +2,51 @@ package com.datastructure;
 
 import java.util.ArrayList;
 
+/**
+ * HashMap implementation of Map interface using ArrayList and linked-list.
+ * Implements methods of Map and permits all types of data, including null.
+ * Additionally, rehashing when load factor crosses threshold.
+ * 
+ * @author Sahil Ghanghas
+ * 
+ * @param <K> Key
+ * @param <V> Value
+ */
 public class HashMap<K, V> implements Map<Object, Object>{
 	
+	// bucket is collection (array) of chains
 	ArrayList<HashNode<K, V>> bucket;
 	
+	// Size of the bucket
 	int bucketSize;
+	
+	// Load Factor threshold value for rehashing
 	static final double LOAD_FACTOR_THRESHOLD = 0.75;
+	
+	// size of the HashMap
 	int size;
 	
-	
+	// Default constructor
 	public HashMap() {
 		
 		bucket = new ArrayList<>();
 		bucketSize = 16;
 		size = 0;
 		
+		// initializing chaining 
 		for (int i = 0; i < bucketSize; i++) {
 			bucket.add(null);
 		}
 	}
 	
+	// Parameterized constructor with custom bucket size
 	public HashMap(int initialBucketSize) {
 		
 		bucket = new ArrayList<>();
 		this.bucketSize = initialBucketSize;
 		size = 0;
 		
+		// initializing chaining 
 		for (int i = 0; i < bucketSize; i++) {
 			bucket.add(null);
 		}
@@ -42,10 +61,14 @@ public class HashMap<K, V> implements Map<Object, Object>{
 
 	@Override
 	public boolean contains(Object k) {
+		
+		// get index corresponding to the Key "k"
 		int bucketIndex = getBucketIndex(k);
 		
+		// get head corresponding to the index
 		HashNode<K,V> head = bucket.get(bucketIndex);
 		
+		// find the HashNode corresponding to the Key "k"
 		while (head != null) {
 			if (head.key.equals(k)) {
 				return true;
@@ -59,13 +82,17 @@ public class HashMap<K, V> implements Map<Object, Object>{
 	@Override
 	public void add(Object k, Object v) {
 		
+		// get index corresponding to the Key "k"
 		int bucketIndex = getBucketIndex(k);
 		
+		// get head corresponding to the index
 		HashNode<K,V> head = bucket.get(bucketIndex);
 		
+		// find the HashNode corresponding to the Key "k"
 		while (head != null) {
 			
 			if (head.key.equals(k)) {
+				// insert value for the Key "k"
 				head.value = (V) v;
 				return;
 			}
