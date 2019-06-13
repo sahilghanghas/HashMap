@@ -1,7 +1,8 @@
 package com.datastructure;
 
 /**
- * 
+ * Implementation of hash node of a doubly linked list
+ * with Key and Value
  * 
  * @author Sahil Ghanghas
  *
