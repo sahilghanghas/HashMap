@@ -18,7 +18,7 @@ public interface Map<K, V> {
 	 * @param k key
 	 * @return true if the key is present in HashMap
 	 */
-	boolean contains(K k);
+	boolean containsKey(K k);
 	
 	/**
 	 * Append's a key-value pair in HashMap
