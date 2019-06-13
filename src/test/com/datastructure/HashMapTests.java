@@ -47,6 +47,16 @@ public class HashMapTests {
 	}
 	
 	@Test
+	public void containsValueTest() {
+		HashMap<String, Integer>map = new HashMap<>(); 
+        map.add("testing",1 ); 
+        map.add("hash",2 ); 
+        map.add("map",5 );
+        assertEquals(true,map.containsValue(5));
+        assertEquals(false,map.containsKey(6));
+	}
+	
+	@Test
 	public void emptyTest() {
 		HashMap<String, Integer>map = new HashMap<>(); 
         assertEquals(true,map.isEmpty());
