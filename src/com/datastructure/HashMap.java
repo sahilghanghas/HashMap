@@ -88,11 +88,11 @@ public class HashMap<K, V> implements Map<Object, Object>{
 		// get head of the chain corresponding to the index
 		HashNode<K,V> head = bucket.get(bucketIndex);
 		
-		// find the HashNode corresponding to the given Key
+		
 		while (head != null) {
-			
+			// check if the key is already present
 			if (head.key.equals(k)) {
-				// insert value for the Key "k"
+				// update value for the Key
 				head.value = (V) v;
 				return;
 			}
