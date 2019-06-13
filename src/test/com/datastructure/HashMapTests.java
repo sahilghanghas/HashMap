@@ -37,13 +37,13 @@ public class HashMapTests {
 	}
 	
 	@Test
-	public void containsTest() {
+	public void containsKeyTest() {
 		HashMap<String, Integer>map = new HashMap<>(); 
         map.add("testing",1 ); 
         map.add("hash",2 ); 
         map.add("map",5 );
-        assertEquals(true,map.contains("hash"));
-        assertEquals(false,map.contains("table"));
+        assertEquals(true,map.containsKey("hash"));
+        assertEquals(false,map.containsKey("table"));
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ public class HashMapTests {
 	
 	@Test
 	public void clearTest() {
-	HashMap<String, Integer>map = new HashMap<>(); 
+		HashMap<String, Integer>map = new HashMap<>(); 
         map.add("testing",1 ); 
         map.add("hash",2 ); 
         map.add("map",5 );
