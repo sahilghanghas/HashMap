@@ -78,6 +78,23 @@ public class HashMap<K, V> implements Map<Object, Object>{
 		}
 		return false;
 	}
+	
+	@Override
+	public boolean containsValue(Object v) {
+		
+		for (HashNode<K,V> node: bucket) {
+					
+			while (node != null) {
+						
+				if(node.value.equals(v)) {
+					return true;
+				}
+				node = node.next;
+						
+			}
+		}
+		return false;
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
