@@ -13,21 +13,24 @@ public interface Map<K, V> {
 	// Does this HashMap contains this Key
 	boolean contains(K k);
 	
-	// insert an element into map
+	/**
+	 * 
+	 * @param k
+	 * @param v
+	 */
 	void add(K k, V v);
 	
-	// delete an element from the map
+	// 
 	void remove(K k);
 	
-	// returns a value corresponding to the given key
+	// 
 	V get(K k);
 	
-	// returns size of the map
+	// 
 	int getSize();
 	
-	// returns the load factor of the HashMap
-	float getLoadFactor();
+	// 
+	double getLoadFactor();
 	
-	// returns an index
-	int getBucketIndex(K k);
+	
 }
