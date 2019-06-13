@@ -68,8 +68,9 @@ public class HashMap<K, V> implements Map<Object, Object>{
 		// get head of the chain corresponding to the index
 		HashNode<K,V> head = bucket.get(bucketIndex);
 		
-		// find the HashNode corresponding to the given Key
+		
 		while (head != null) {
+			// check if key is found
 			if (head.key.equals(k)) {
 				return true;
 			}
