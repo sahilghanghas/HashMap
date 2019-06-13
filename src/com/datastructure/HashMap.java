@@ -2,7 +2,7 @@ package com.datastructure;
 
 import java.util.ArrayList;
 
-public class HashMap<K, V> implements Map{
+public class HashMap<K, V> implements Map<Object, Object>{
 	
 	ArrayList<HashNode<K, V>> bucket;
 	
@@ -17,6 +17,9 @@ public class HashMap<K, V> implements Map{
 		bucketSize = 16;
 		size = 0;
 		
+		for (int i = 0; i < bucketSize; i++) {
+			bucket.add(null);
+		}
 	}
 	
 	public HashMap(int initialBucketSize) {
@@ -52,6 +55,7 @@ public class HashMap<K, V> implements Map{
 		return false;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void add(Object k, Object v) {
 		
@@ -173,5 +177,4 @@ public class HashMap<K, V> implements Map{
 		int index = (bucketSize - 1) & hash;
 		return index;
 	}
-
 }
